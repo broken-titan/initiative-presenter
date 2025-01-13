@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Initiative (Admin)</title>
+        <script src="main.js" defer></script>
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <input type="url" name="graphic" placeholder="URL" onChange="saveGraphicToSession()">
+            <input type="checkbox" name="graphic-show" onChange="saveGraphicToSession()">
+        </div>
+        <div>
+            <button onClick="addCharacter()">+ Character</button>
+            <button onClick="sortCharacters()">Sort</button>
+            <button onClick="advanceInitiative()">Next in Initiative</button>
+            <button onClick="clearCharacters()">CLEAR</button>
+        </div>
+        <div>
+            <table id="initiativeTable" class="initiative-tracker">
+                <thead>
+                    <tr>
+                        <th>Creature</th>
+                        <th>Initiative</th>
+                        <th>Graphic</th>
+                        <th>Active</th>
+                        <th>Obscured</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="character hidden">
+                        <td class="name">
+                            <input type="hidden" name="id" value="">
+                            <input type="text" placeholder="Name" name="name" value="" onKeyUp="saveCharactersToSession()">
+                        </td>
+                        <td class="initiative">
+                            <input type="number" placeholder="0" name="initiative" value="" onKeyUp="saveCharactersToSession()">
+                        </td>
+                        <td class="graphic">
+                            <input type="text" placeholder="URL" name="graphic" value="" onKeyUp="saveCharactersToSession()">
+                        </td>
+                        <td class="active">
+                            <input type="radio" name="active" onChange="saveActiveToSession()">
+                        </td>
+                        <td class="obscured">
+                            <input type="checkbox" name="obscured" onChange="saveCharactersToSession()" value="1">
+                        </td>
+                        <td class="center">
+                            <button onClick="removeCharacter(this)">X</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <footer>
+        
+    </footer>
+</html>

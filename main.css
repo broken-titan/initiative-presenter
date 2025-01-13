@@ -1,0 +1,184 @@
+html {
+    overflow: hidden;
+}
+
+body {
+    display: grid;
+    gap: 5px;
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    max-height: 100vh;
+    transition: all 0.25s;
+}
+
+body > div {
+    width: 100%;
+}
+
+.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.faded {
+    opacity: 0.5;
+}
+
+.center {
+    text-align: center;
+}
+
+div.pages {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.pages a {
+
+}
+
+table.initiative-tracker {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.initiative-tracker th, 
+table.initiative-tracker td {
+    border: 1px solid black;
+    padding: 0.5em;
+}
+table.initiative-tracker th {
+    background-color: #f0f0f0;
+}
+
+table.initiative-tracker td {
+    margin: 0;
+    padding: 5px;
+    padding-right: 15px;
+    text-align: left;
+    width: 50%;
+}
+
+table.initiative-tracker input {
+    border: 0;
+    padding: 5px;
+    margin: 0;
+    width: 100%;
+}
+
+ul.initiative-scroller {
+    transition: all 0.25s;
+    list-style-type: none;
+    padding: 10px;
+    height: 100%;
+    font-size: 5em;
+    position: relative;
+    margin-top: 15px;
+}
+
+ul.initiative-scroller > li {
+    transition: all 0.25s;
+    opacity: 15%;
+    position: relative;
+    padding: 10px 0px;
+}
+
+ul.initiative-scroller > li div {
+    display: inline-block;
+}
+
+ul.initiative-scroller > li div.name {
+    padding-left: 15px;
+}
+
+ul.initiative-scroller > li div.initiative {
+    font-size: .3em;
+    top: -10px;
+    position: absolute;
+}
+
+ul.initiative-scroller > li.active {
+    font-size: 1.5em;
+    opacity: 100%;
+}
+
+ul.initiative-scroller li.obscured div.name {
+    filter: blur(5px);
+}
+
+#nextCharacter {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    text-align: right;
+}
+
+#nextCharacter .title {
+    font-size: 2em;
+}
+
+#nextCharacter .name {
+    font-size: 3em;
+}
+
+input[name='graphic'] {
+    width: 80%;
+}
+
+input[name='graphic-show'] {
+    transform: scale(1.5);
+}
+
+img.graphic {
+    transition: visibility 0.25s, opacity 0.25s linear;
+    filter: drop-shadow(0 0 1rem black);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    z-index: 2;
+}
+
+.bloody {
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale( .85 );
+    }
+    20% {
+        transform: scale( 1 );
+    }
+    40% {
+        transform: scale( .85 );
+    }
+    60% {
+        transform: scale( 1 );
+    }
+    80% {
+        transform: scale( .85 );
+    }
+    100% {
+        transform: scale( .85 );
+    }
+}
